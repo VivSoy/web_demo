@@ -1,0 +1,108 @@
+.anima_box{
+  position: relative;
+  left: 50%;
+  top: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  transform: translateX(-50px);
+}
+.anima_point_1,.anima_point_2,.anima_point_3,.anima_point_4{
+  position: absolute;
+}
+.anima_point_1{
+  left: 0;
+  top: 0;
+  background-color: blue;
+  animation: anima_point_1 2s infinite;
+}
+.anima_point_2{
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  animation: anima_point_2 2s infinite;
+}
+.anima_point_3{
+  left: 20px;
+  top: -20px;
+  width: 2px;
+  height: 140px;
+  background-color: black;
+  animation: anima_point_3 2s infinite;
+}
+.anima_point_4{
+  left: -20px;
+  top: 20px;
+  width: 140px;
+  height: 2px;
+  background-color: black;
+  animation: anima_point_4 2s infinite;
+}
+.anima_point_5{     /* 上边框 */
+  position: absolute;
+  left: -20px;
+  top: -2px;
+  width: 140px;
+  height: 2px;
+  background-color: black;
+}
+.anima_point_6{   /* 下边框 */
+  position: absolute;
+  left: -20px;
+  top: 100px;
+  width: 140px;
+  height: 2px;
+  background-color: black;
+}
+.anima_point_7{   /* 左边框 */
+  position: absolute;
+  left: -2px;
+  top: -20px;
+  width: 2px;
+  height: 140px;
+  background-color: black;
+}
+.anima_point_8{   /* 右边框 */
+  position: absolute;
+  left: 100px;
+  top: -20px;
+  width: 2px;
+  height: 140px;
+  background-color: black;
+}
+
+@keyframes anima_point_1{
+  0%{width: 20px;height: 20px;}
+  25%{width: 80px;height: 20px;}
+  50%{width: 80px;height: 80px;}
+  75%{width: 20px;height: 80px;}
+  100%{width: 20px;height: 20px;}
+}
+@keyframes anima_point_2{
+  0%{width: 80px;height: 80px;}
+  25%{width: 20px;height: 80px;}
+  50%{width: 20px;height: 20px;}
+  75%{width: 80px;height: 20px;}
+  100%{width: 80px;height: 80px;}
+}
+@keyframes anima_point_3{
+  0%{left: 20px;}
+  25%{left: 80px;}
+  50%{left: 80px;}
+  75%{left: 20px;}
+  100%{left: 20px;}
+}
+@keyframes anima_point_4{
+  0%{top: 20px;}
+  25%{top: 20px;}
+  50%{top: 80px;}
+  75%{top: 80px;}
+  100%{top: 20px;}
+}
+
+.loading_text{
+  position: fixed;
+  top: 250px;
+  width: 100%;
+  text-align: center;
+}

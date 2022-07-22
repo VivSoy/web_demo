@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* 设置body高度为100%窗口高度 */
+    /* vh和100%的区别
+        当元素没有内容的时候，设置100%元素不会被撑开，此时的高度就是0
+        当设置vh的时候，元素会被撑开，与屏幕一致 */
+    height: 100vh;
+    /* 弹性盒子 */
+    display: flex;
+    /* 将盒子模型定位 */
+    justify-content: center;
+    /* 元素位于容器的中心，居中显示 */
+    align-items: center;
+    background-color: #e9e6f0;
+}
+.container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* 改变盒子模型的主轴方向 */
+    flex-direction: column;
+    width: 350px;
+    height: 450px;
+    background-color: aqua;
+    /* 设置圆角 */
+    border-radius: 20px;
+    /* 盒子阴影 */
+    box-shadow: 15px 15px 10px rgba(33, 45, 58, .3);
+    /* 溢出隐藏 如果元素超出给定的宽度与高度，超出部分隐藏 */
+    overflow: hidden;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 200px;
+    /* 均匀排列元素周围的空间 */
+    justify-content: space-around;
+    /* 让容器的子元素居中显示 */
+    align-items: center;
+    z-index: 1;
+}
+.tbox{
+    width: 250px;
+    height: 35px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+.sub{
+    width: 200px;
+    height: 30px;
+    color: #fff;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    /* 调节字母间距 */
+    letter-spacing: 10px;
+    cursor: pointer;
+    background: none;
+    margin-top: 20px;
+}
+h2{
+    color: beige;
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-weight: normal;
+    /* 文字阴影变化 */
+    text-shadow: 5px 5px 5px  rgba(33, 45, 58, .3);
+    z-index: 1;
+}
+/* 设置鼠标进入时的样式 */
+
+/* 鼠标进入时为一个点，首先初始化该点的位置 */
+.container .in{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    /* 设置进入时为弧度 */
+    border-radius: 50%;
+    background-color: #ce1f45;
+    /* 让后续hover时表现为弧线运动 */
+    transform: translate(-50%, -50%);
+    /* 添加动画 */
+    animation: in .3s ease-out/* 以低速结束 */1 forwards;
+}
+/* 鼠标离开时的样式 */
+.container .out{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1200px;
+    height: 1200px;
+    display: block;
+    border-radius: 50%;
+    background-color: #ce1f45;
+    transform: translate(-50%, -50%);
+    animation: out .3s ease-out 1 forwards;
+}
+@keyframes in {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 1200px;
+        height: 1200px;
+    }
+}
+@keyframes out {
+    0%{
+        width: 1200px;
+        height: 1200px;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
+}
