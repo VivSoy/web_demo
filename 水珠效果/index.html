@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水珠效果</title>
+</head>
+<style>
+  body{
+    background: url(./image/image.png) no-repeat  ;
+    display: flex;
+    height: 100vh;
+  }
+  div{
+    position: relative;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    border-radius: 30% 70% 70% 30% / 30% 40% 60% 70%;
+    box-shadow: inset 5px 10px 15px rgba(0, 0, 0, .4),  /* 内部阴影 */
+    10px 15px 15px rgba(0, 0, 0, .3),   /* 外部阴影 */
+    15px 15px 15px rgba(0, 0, 0, .03),
+    inset -10px -10px 15px rgba(225, 225, 225, .38);
+    animation:  move 3s linear infinite forwards;
+    transition: 2s;
+  }
+  div::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 18px;
+    border-radius: 40%;
+    background-color: #fff;
+    top: 30px;
+    left: 40px;
+  }
+  @keyframes move {
+    30%{
+      border-radius: 30% 70% 36% 64% / 30% 52% 48% 70%  ;
+    }
+    60%{
+      border-radius:30% 70% 61% 39% / 30% 52% 48% 70%   ;
+    }
+  }
+</style>
+<body>
+  <div></div>
+</body>
+</html>
