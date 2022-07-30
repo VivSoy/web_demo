@@ -1,0 +1,66 @@
+body{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8e8e8;
+}
+.loader{
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  position: relative;
+}
+
+/* 阴影 */
+.loader::before{
+  content: " ";
+  width: 110px;
+  height: 10px;
+  background-color: #f0808050;
+  position: absolute;
+  top: 130px;
+  left: 0;
+  border-radius: 50%;
+  animation: shadow .8s linear infinite;
+}
+
+/* 盒子 */
+.loader::after{
+  content: ' ';
+  width: 100px;
+  height: 100px;
+  background-color: #f08080;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10%;
+  animation: jumpBox .8s linear infinite;
+}
+
+@keyframes shadow{
+  0%,
+  100%{
+    transform: scale(1,1);
+  }
+  50%{
+    transform: scale(1.2,1);
+  }
+}
+
+
+@keyframes jumpBox{
+ 15%{
+  border-bottom-right-radius: 5%;
+ }
+ 25%{
+  transform: translateY(9px) rotate(22.5deg);
+ }
+ 50%{
+  transform: translateY(18px) rotate(45deg) scale(1,0.9);
+  border-bottom-right-radius: 50%;
+ }
+ 100%{
+  transform: translateY(0) rotate(90deg);
+ }
+}
